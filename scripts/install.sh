@@ -59,16 +59,16 @@ else
 fi
 
 # Install dependencies with PNPM
-# echo "Installing dependencies..."
-# pnpm install
+echo "Installing dependencies..."
+pnpm install
 
 # Build the project
-# echo "Building the project..."
-# pnpm run build
+echo "Building the project..."
+pnpm run build
 
 # Start the application with PM2
-# echo "Starting the application with PM2..."
-# pm2 start pnpm --name openagri -- start
-# pm2 save
+echo "Starting the application with PM2..."
+pm2 start dist/main.js --name openagri-node
+pm2 save
 
 echo "Installation and deployment complete! The application is now running."

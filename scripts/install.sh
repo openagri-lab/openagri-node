@@ -65,18 +65,8 @@ echo "Building the project..."
 pnpm run build
 
 # Start the application with PM2
-APP_NAME="openagri-node"
-
-# Vérifie si l'application tourne déjà avec PM2
-if pm2 list | grep -q "$APP_NAME"; then
-    echo "Restarting $APP_NAME with PM2..."
-    pm2 restart "$APP_NAME"
-else
-    echo "Starting $APP_NAME with PM2..."
-    pm2 start dist/main.js --name "$APP_NAME"
-fi
-
-# Sauvegarde l'état de PM2
+echo "Starting the application with PM2..."
+pm2 start dist/main.js --name openagri-node
 pm2 save
 
 echo "Installation and deployment complete! The application is now running."

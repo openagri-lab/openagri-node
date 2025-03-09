@@ -32,7 +32,7 @@ echo "Verifying Node.js and npm installation..."
 node -v
 npm -v
 
-# Install PNPM
+# Install PNPM (Package Manager)
 echo "Installing PNPM..."
 curl -fsSL https://get.pnpm.io/install.sh | sh -
 export PATH="$HOME/.local/share/pnpm:$PATH"

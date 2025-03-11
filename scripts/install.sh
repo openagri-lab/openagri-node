@@ -11,7 +11,7 @@ echo "📦 Installing required dependencies..."
 sudo apt install -y curl git build-essential software-properties-common apt-transport-https gnupg wget lsb-release postgresql-common
 
 # Install PostgreSQL 17 & TimescaleDB if not installed ---
-if ! command -v psql &> /dev/null || [[ "$(psql --version | grep -oP '\d+')" -lt 17 ]]; then
+if ! psql --version 2>/dev/null | grep -q " 17"; then
     echo "📥 Adding PostgreSQL 17 repository using the official script..."
     sudo /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh -y
 

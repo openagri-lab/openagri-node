@@ -133,7 +133,8 @@ echo "📦 Installing dependencies..."
 pnpm install
 
 echo "Application des migrations Prisma..."
-npx prisma migrate deploy 
+npx prisma migrate deploy
+npx prisma generate
 
 # Build the project
 echo "🛠️ Building the project..."

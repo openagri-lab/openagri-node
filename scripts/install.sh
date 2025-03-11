@@ -68,5 +68,6 @@ pnpm run build
 echo "Starting the application with PM2..."
 pm2 start dist/src/main.js --name openagri-node
 pm2 save
+pm2 startup
 
 echo "Installation and deployment complete! The application is now running."

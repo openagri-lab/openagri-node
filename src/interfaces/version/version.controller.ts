@@ -1,15 +1,15 @@
 import { Controller, Get, Response, HttpStatus } from '@nestjs/common';
-import { AppService } from './app.service';
+import { VersionService } from './version.service';
 import { exec } from 'child_process';
 import { FastifyReply } from 'fastify';
 
 @Controller()
-export class AppController {
-  constructor(private readonly appService: AppService) {}
+export class VersionController {
+  constructor(private readonly versionService: VersionService) {}
 
   @Get()
   getVersion(): { version: string } {
-    return this.appService.getVersion();
+    return this.versionService.getVersion();
   }
 
   @Get('update')

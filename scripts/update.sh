@@ -41,12 +41,12 @@ git pull origin main
 echo "Installing updated dependencies..."
 pnpm install
 
+echo "Application des migrations Prisma..."
+npx prisma migrate deploy  # Appliquer les migrations existantes
+
 # Build the project
 echo "Building the project..."
 pnpm run build
-
-echo "Application des migrations Prisma..."
-npx prisma migrate deploy  # Appliquer les migrations existantes
 
 # Restart the application with PM2
 echo "Restarting the application with PM2..."

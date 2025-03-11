@@ -1,8 +1,9 @@
 import { Injectable } from '@nestjs/common';
+import { version } from './../package.json';
 
 @Injectable()
 export class AppService {
   getVersion(): { version: string } {
-    return { version: '0.0.1-alpha.0'};
+    return { version };
   }
 }

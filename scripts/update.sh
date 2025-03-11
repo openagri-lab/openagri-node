@@ -47,7 +47,7 @@ pnpm run build
 
 # Restart the application with PM2
 echo "Restarting the application with PM2..."
-pm2 restart openagri-node
+pm2 reload openagri-node
 pm2 save
 
 echo "Update complete! The application is now running with the latest version."

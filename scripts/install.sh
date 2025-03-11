@@ -68,6 +68,17 @@ pnpm run build
 echo "Starting the application with PM2..."
 pm2 start dist/src/main.js --name openagri-node
 pm2 save
-pm2 startup
+
+# Enable PM2 startup
+PME_CMD=$(pm2 startup | tail -n 1)
+
+if [ -z "$PME_CMD" ]; then
+    echo "PM2 startup command not found. Please run the following command manually:"
+    exit 1
+fi
+
+# Check if the PM2 startup command is already enabled
+echo "Enabling PM2 startup..."
+eval $PME_CMD
 
 echo "Installation and deployment complete! The application is now running."

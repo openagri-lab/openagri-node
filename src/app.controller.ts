@@ -14,7 +14,7 @@ export class AppController {
 
   @Get('update')
   updateVersion(@Response() reply: FastifyReply) {
-    exec('/bin/bash /home/$USER/openagri-node/scripts/update.sh', (error, stdout, stderr) => {
+    exec('nohup /bin/bash /home/$USER/openagri-node/scripts/update.sh > /home/$USER/openagri-node/scripts/update.log 2>&1 &', (error, stdout, stderr) => {
       if (error) {
         console.error(`Error executing update script: ${error.message}`);
         return reply.status(HttpStatus.INTERNAL_SERVER_ERROR).send({ error: error.message });
